@@ -35,4 +35,17 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return false when the word matrix is an empty array", function() {
+    const result = wordSearch([], 'ABCD');
+    assert.isFalse(result);
+  });
+
+  it("should return false if the word is not present vertically", function() {
+      const result = wordSearch([
+          // ... [similar matrix as above]
+      ], 'HELLO')
+      assert.isFalse(result);
+  });
+
 });
